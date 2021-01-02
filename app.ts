@@ -2,28 +2,38 @@
 (function(){
 
     /* 
-        Let: Puede perfecamento sutituir a var para poder almacenar
-             espacio de memoria para una variable
-        let: Solo vive en el espacio delimitado por las llaves llamado scope
-        Nota: No permite redeclarar una variable en el mismo scope.
-
-        const: Me sirve para declarar constantes en typescript
-        Nota: Las constantes pesan menos en la memorias si el valor
-              no va a cambiar
-        Las constantes en mayusculas indican que una variable nunca  va
-        a cambiar de valor.
-
+        Any: Typescript tiene un tipo especial de dato llamado any el cual
+             soporta cualquier tipado.
     */
 
-    let mensaje = 'hola';
-    const HOLA = 'Hola Javier';
-    hola = 123;
+    let mensaje: string = 'hola';
+    let numero: number = 123;
+    let booleano : boolean = true; //false
+    let hoy : Date = new Date();
+    
+    // Demostración de como el tipo Any soporta cualquier tipado.
+    let cualquiercosa;
 
-    if(true){
-        let mensaje = 'mundo';
+    cualquiercosa =  mensaje;
+    cualquiercosa = numero;
+    cualquiercosa = booleano;
+    cualquiercosa = hoy;
+
+    /* Objetos : Typescript adquiere un comportamiento interesante en los objetos
+                 en el cual identifica los atributos creados e infiere su tipado
+                 agregando un cierto candado a los objetos creados, asi bloquea
+                 la creación de las nuevas propiedades al objeto ya establecido.
+    */
+
+    let spiderman = {
+        nombre: 'Peter',
+        edad : 30
     }
 
-    console.log(mensaje);
+    spiderman = {
+        nombre: 'Javier',
+        edad: 25
+    }
 
 })();
 
